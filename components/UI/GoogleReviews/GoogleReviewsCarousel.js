@@ -39,7 +39,6 @@ var settings = {
 };
 
 export default function GoogleReviewsCarousel({data}) {
-  console.log(data)
   if (!data || data.length === 0) return null;
 
   // slider arrow functionality

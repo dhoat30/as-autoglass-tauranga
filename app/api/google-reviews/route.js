@@ -4,7 +4,8 @@ export async function GET() {
   try {
     const placeId = process.env.GOOGLE_PLACE_ID;
     const apiKey = process.env.SERPAPI_API_KEY;
-
+    console.log("PLACE_ID:", process.env.GOOGLE_PLACE_ID);
+    console.log("API_KEY exists:", !!process.env.SERPAPI_API_KEY);
     if (!placeId || !apiKey) {
       return NextResponse.json(
         { error: 'Missing SERPAPI_API_KEY or GOOGLE_PLACE_ID' },

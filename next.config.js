@@ -1,8 +1,8 @@
 const { siteUrl } = require('./next-sitemap.config');
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
-    (process.env.NODE_ENV === "production" ? "https://quote.kcleaningsolution.co.nz" : "http://localhost:3000");
-    const siteName = "K Cleaning Solution"
+    (process.env.NODE_ENV === "production" ? "https://asautoglass.co.nz" : "http://localhost:3000");
+    const siteName = "AS Auto Glass"
 
 // bundle analyzer 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
