@@ -62,7 +62,10 @@ export async function generateMetadata(props, parent) {
         <>
             <Header />
             <main>
-                <BreadcrumbHero title={"Customer Reviews"} description={"Explore authentic customer feedback and see why people trust us. Each review reflects the quality and dedication we bring to every service we provide."} />
+                {googleReviews && googleReviews.length > 0 && (
+                                    <BreadcrumbHero title={"Customer Reviews"} description={"Explore authentic customer feedback and see why people trust us. Each review reflects the quality and dedication we bring to every service we provide."} />
+                )
+                    }
            <GoogleReviewGridLayout data={googleReviews} />
 
             <Layout sections={sections} />
