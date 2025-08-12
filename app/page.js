@@ -1,3 +1,5 @@
+export const revalidate = 2592000; // applies to both page and metadata
+
 // import Layout from '@/components/UI/Layout/Layout'
 // import OptimizedHero from '@/components/UI/Hero/OptimizedHero/OptimizedHero'
 // import TechLogos from '@/components/UI/TechLogos/TechLogos'

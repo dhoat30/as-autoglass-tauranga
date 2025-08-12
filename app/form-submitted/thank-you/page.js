@@ -1,3 +1,5 @@
+export const revalidate = 2592000; // applies to both page and metadata
+
 import Header from '@/components/UI/Header/Header';
 import ThankYou from '@/components/UI/ThankYou/ThankYou';
 
