@@ -1,3 +1,5 @@
+export const revalidate = 2592000; // 30 days
+
 import { NextResponse } from 'next/server';
 
 export async function GET() {
