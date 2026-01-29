@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useRef } from "react";
 import Container from "@mui/material/Container";
@@ -38,12 +38,11 @@ var settings = {
   ],
 };
 
-export default function GoogleReviewsCarousel({data}) {
+export default function GoogleReviewsCarousel({ data }) {
   if (!data || data.length === 0) return null;
 
   // slider arrow functionality
   const sliderRef = useRef(null);
-
 
   const next = () => {
     if (sliderRef.current) {
@@ -56,38 +55,35 @@ export default function GoogleReviewsCarousel({data}) {
       sliderRef.current.slickPrev();
     }
   };
-  // filter review comment 
+  // filter review comment
   const filteredReviewData = data.filter((item) => {
     return item.rating === 5 && typeof item.snippet === "string";
   });
 
-
-  const testimonialCardsJSX = filteredReviewData.map(
-    (item, index) => {
-      if (index > 10) return null;
-      return (
-        <GoogleReviewCard
-          key={index}
-          name={item.user.name}
-          description={item.snippet}
-          customerPic={item.user.thumbnail}
-          characterLimit={80}
-        />
-      );
-    }
-  );
+  const testimonialCardsJSX = filteredReviewData.map((item, index) => {
+    if (index > 10) return null;
+    return (
+      <GoogleReviewCard
+        key={index}
+        name={item.user.name}
+        description={item.snippet}
+        customerPic={item.user.thumbnail}
+        characterLimit={80}
+      />
+    );
+  });
 
   return (
     <Section>
       <Container maxWidth="xl">
-      <div className="title-row">
+        <div className="title-row">
           <Typography
             variant="h2"
             component="h2"
             className="title"
             align="center"
           >
-          Google Reviews
+            Google Reviews
           </Typography>
           <Typography
             variant="body1"
@@ -95,9 +91,10 @@ export default function GoogleReviewsCarousel({data}) {
             className="description mt-16"
             align="center"
           >
-Explore authentic customer feedback and see why people trust us. Each review reflects the quality and dedication we bring to every service we provide.        </Typography>
-
-
+            Explore authentic customer feedback and see why people trust us.
+            Each review reflects the quality and dedication we bring to every
+            service we provide.{" "}
+          </Typography>
         </div>
         <div className="arrows-wrapper">
           <CarouselArrows next={next} previous={previous} />
@@ -109,15 +106,13 @@ Explore authentic customer feedback and see why people trust us. Each review ref
         </Slider>
       </div>
       <Container maxWidth="xl" className="cta-wrapper mt-40">
-        <Link href={"https://g.page/r/CfiZybByiY7_EAE/review"} target="_blank">
+        <Link href={"https://g.page/r/CZnKTaPcz9nyEAE/review"} target="_blank">
           <Button variant={`contained`} endIcon={<CallMadeOutlinedIcon />}>
-           Leave a Review 
+            Leave a Review
           </Button>
         </Link>
         <Link href="/customer-reviews">
-          <Button variant={`outlined`}>
-            Read All Reviews
-          </Button>
+          <Button variant={`outlined`}>Read All Reviews</Button>
         </Link>
       </Container>
     </Section>
@@ -125,7 +120,7 @@ Explore authentic customer feedback and see why people trust us. Each review ref
 }
 
 const Section = styled.section`
-background:var(--light-surface-container-low);
+  background: var(--light-surface-container-low);
   border-top: 1px solid var(--light-outline-variant);
   border-bottom: 1px solid var(--light-outline-variant);
   padding: 80px 0;
@@ -142,6 +137,6 @@ background:var(--light-surface-container-low);
     display: flex;
     justify-content: center;
     gap: 16px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
   }
 `;
